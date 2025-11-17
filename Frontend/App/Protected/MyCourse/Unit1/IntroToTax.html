@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Introduction to Taxation - Budgex</title>
+    <link rel="stylesheet" href="lesson.css">
+</head>
+<body>
+    <script src="../../Dashboard/api-client.js"></script>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">Budgex</div>
+
+        <nav class="sidebar-nav">
+            <a href="../../Dashboard/dashboard-interactive.html" class="nav-item">
+                <span class="nav-icon icon-home"></span>
+                <span>Dashboard</span>
+            </a>
+            <a href="../mycourses.html" class="nav-item active">
+                <span class="nav-icon icon-courses"></span>
+                <span>My Courses</span>
+            </a>
+            <a href="../../Tools/tools.html" class="nav-item">
+                <span class="nav-icon icon-tools"></span>
+                <span>Tools</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar" id="user-avatar">JD</div>
+                <div class="user-info">
+                    <div class="user-name" id="user-name">John Doe</div>
+                    <div class="user-email" id="user-email">john@example.com</div>
+                </div>
+            </div>
+            <a href="#" class="nav-item" id="logout-btn">
+                <span class="nav-icon icon-logout"></span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Lesson Header -->
+        <header class="lesson-header">
+            <div class="breadcrumb">
+                <a href="../mycourses.html">My Courses</a>
+                <span class="separator">/</span>
+                <a href="../unit.html?course=tax-fundamentals">Tax Fundamentals</a>
+                <span class="separator">/</span>
+                <span class="current">Lesson 1</span>
+            </div>
+            <h1 class="lesson-title">Introduction to Taxation</h1>
+            <div class="lesson-meta">
+                <span class="lesson-duration">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="8" r="7" stroke="#fbbf24" stroke-width="2" fill="none"/>
+                        <path d="M8 4 L8 8 L11 8" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    45 minutes
+                </span>
+                <span class="lesson-progress-indicator">
+                    <span id="current-section">1</span> / <span id="total-sections">5</span>
+                </span>
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="lesson-progress-bar">
+            <div class="lesson-progress-fill" id="lesson-progress-fill" style="width: 0%"></div>
+        </div>
+
+        <!-- Lesson Content Container -->
+        <div class="lesson-container">
+            <!-- Section 1: What Are Taxes? -->
+            <section class="lesson-section active" id="section-1">
+                <div class="section-number">Section 1 of 5</div>
+                <h2 class="section-title">What Are Taxes?</h2>
+
+                <div class="content-block">
+                    <p class="content-text">
+                        <strong>Taxes are mandatory payments</strong> that everyone makes to the government. Think of them as your contribution to keeping society running smoothly.
+                    </p>
+                    <p class="content-text">
+                        Every time you earn money—whether from a job, business, or investments—a portion goes to the government in the form of taxes. This isn't optional; it's required by law.
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#fbbf24" stroke-width="2"/>
+                            <path d="M12 8 L12 12 L12 16" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="12" cy="6" r="1" fill="#fbbf24"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <h3 class="info-title">Key Point</h3>
+                        <p>Taxes are not a punishment—they're how we collectively fund the services and infrastructure that benefit everyone in society.</p>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <h3 class="visual-title">Tax Flow Overview</h3>
+                    <div class="tax-flow-diagram">
+                        <div class="flow-step">
+                            <div class="flow-icon">💼</div>
+                            <div class="flow-label">You Earn Money</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">💰</div>
+                            <div class="flow-label">Pay Taxes</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">🏛️</div>
+                            <div class="flow-label">Government</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="flow-icon">🏗️</div>
+                            <div class="flow-label">Public Services</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary" disabled>Previous</button>
+                    <button class="btn-primary next-btn" onclick="goToSection(2)">Next Section</button>
+                </div>
+            </section>
+
+            <!-- Section 2: Why Do We Pay Taxes? -->
+            <section class="lesson-section" id="section-2">
+                <div class="section-number">Section 2 of 5</div>
+                <h2 class="section-title">Why Do We Pay Taxes?</h2>
+
+                <div class="content-block">
+                    <p class="content-text">
+                        Taxes fund the essential services and infrastructure that keep society functioning. Without taxes, we wouldn't have many of the things we rely on every day.
+                    </p>
+                </div>
+
+                <div class="visual-card">
+                    <h3 class="visual-title">What Your Taxes Fund</h3>
+                    <div class="tax-breakdown-chart">
+                        <div class="chart-bar-container">
+                            <div class="chart-label">🏫 Education & Schools</div>
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="width: 25%; background: #fbbf24;">
+                                    <span class="chart-value">25%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-label">🚗 Roads & Infrastructure</div>
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="width: 20%; background: #f59e0b;">
+                                    <span class="chart-value">20%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-label">🏥 Healthcare & Medicare</div>
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="width: 28%; background: #2ed573;">
+                                    <span class="chart-value">28%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-label">👮 Safety & Defense</div>
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="width: 18%; background: #5f27cd;">
+                                    <span class="chart-value">18%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-label">🌳 Other Services</div>
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="width: 9%; background: #c0c0c0;">
+                                    <span class="chart-value">9%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>Public Services Funded by Your Taxes:</h3>
+                    <ul class="services-list">
+                        <li><span class="check-icon">✓</span> Public schools and universities</li>
+                        <li><span class="check-icon">✓</span> Roads, bridges, and highways</li>
+                        <li><span class="check-icon">✓</span> Police and fire departments</li>
+                        <li><span class="check-icon">✓</span> Healthcare programs (Medicare, Medicaid)</li>
+                        <li><span class="check-icon">✓</span> Parks and recreation areas</li>
+                        <li><span class="check-icon">✓</span> Social Security benefits</li>
+                    </ul>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary prev-btn" onclick="goToSection(1)">Previous</button>
+                    <button class="btn-primary next-btn" onclick="goToSection(3)">Next Section</button>
+                </div>
+            </section>
+
+            <!-- Section 3: How Taxes Affect Your Financial Life -->
+            <section class="lesson-section" id="section-3">
+                <div class="section-number">Section 3 of 5</div>
+                <h2 class="section-title">How Taxes Affect Your Financial Life</h2>
+
+                <div class="content-block">
+                    <p class="content-text">
+                        Taxes directly impact your finances in three major ways:
+                    </p>
+                </div>
+
+                <div class="impact-cards">
+                    <div class="impact-card">
+                        <div class="impact-number">1</div>
+                        <h3 class="impact-title">Reduced Take-Home Pay</h3>
+                        <p class="impact-description">
+                            When you earn $1,000, you don't get to keep the full amount. Taxes are withheld from your paycheck, so you might only take home $750-$850 depending on your tax situation.
+                        </p>
+                        <div class="example-box">
+                            <strong>Example:</strong><br>
+                            Gross Pay: $4,000/month<br>
+                            Taxes Withheld: -$800<br>
+                            <strong style="color: #fbbf24;">Take-Home: $3,200/month</strong>
+                        </div>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-number">2</div>
+                        <h3 class="impact-title">Budget Planning</h3>
+                        <p class="impact-description">
+                            You need to budget based on your after-tax income, not your gross salary. This affects how much you can save, spend, and invest each month.
+                        </p>
+                    </div>
+
+                    <div class="impact-card">
+                        <div class="impact-number">3</div>
+                        <h3 class="impact-title">Tax Refunds or Bills</h3>
+                        <p class="impact-description">
+                            At the end of each year, you file a tax return. If too much was withheld, you get a refund. If too little was withheld, you owe money to the IRS.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <h3 class="visual-title">Gross Pay vs. Take-Home Pay</h3>
+                    <div class="comparison-chart">
+                        <div class="comparison-item">
+                            <div class="comparison-label">Gross Annual Salary</div>
+                            <div class="comparison-bar gross-bar">
+                                <span class="comparison-value">$50,000</span>
+                            </div>
+                        </div>
+                        <div class="deduction-arrow">↓ Federal, State, & Payroll Taxes</div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Take-Home Pay</div>
+                            <div class="comparison-bar takehome-bar">
+                                <span class="comparison-value">$38,500</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary prev-btn" onclick="goToSection(2)">Previous</button>
+                    <button class="btn-primary next-btn" onclick="goToSection(4)">Next Section</button>
+                </div>
+            </section>
+
+            <!-- Section 4: Knowledge Check Quiz -->
+            <section class="lesson-section" id="section-4">
+                <div class="section-number">Section 4 of 5</div>
+                <h2 class="section-title">Knowledge Check</h2>
+
+                <div class="content-block">
+                    <p class="content-text">
+                        Let's test your understanding of what we've covered so far. Answer these questions to reinforce your learning.
+                    </p>
+                </div>
+
+                <div class="quiz-container">
+                    <!-- Question 1 -->
+                    <div class="quiz-question" id="quiz-1">
+                        <div class="question-header">
+                            <span class="question-number">Question 1 of 3</span>
+                        </div>
+                        <h3 class="question-text">What are taxes primarily used for?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(1, 'A', false)">
+                                <input type="radio" name="q1" id="q1-a">
+                                <label for="q1-a">A) To punish people who earn money</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 'B', true)">
+                                <input type="radio" name="q1" id="q1-b">
+                                <label for="q1-b">B) To fund public services like roads, schools, and healthcare</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 'C', false)">
+                                <input type="radio" name="q1" id="q1-c">
+                                <label for="q1-c">C) To make the government wealthy</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 'D', false)">
+                                <input type="radio" name="q1" id="q1-d">
+                                <label for="q1-d">D) Taxes are optional donations</label>
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-1"></div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-question" id="quiz-2" style="display: none;">
+                        <div class="question-header">
+                            <span class="question-number">Question 2 of 3</span>
+                        </div>
+                        <h3 class="question-text">If your gross monthly salary is $5,000 and $1,000 is withheld for taxes, what is your take-home pay?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(2, 'A', false)">
+                                <input type="radio" name="q2" id="q2-a">
+                                <label for="q2-a">A) $5,000</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 'B', false)">
+                                <input type="radio" name="q2" id="q2-b">
+                                <label for="q2-b">B) $6,000</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 'C', true)">
+                                <input type="radio" name="q2" id="q2-c">
+                                <label for="q2-c">C) $4,000</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 'D', false)">
+                                <input type="radio" name="q2" id="q2-d">
+                                <label for="q2-d">D) $1,000</label>
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-2"></div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-question" id="quiz-3" style="display: none;">
+                        <div class="question-header">
+                            <span class="question-number">Question 3 of 3</span>
+                        </div>
+                        <h3 class="question-text">Why is understanding taxes important for your financial life?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(3, 'A', false)">
+                                <input type="radio" name="q3" id="q3-a">
+                                <label for="q3-a">A) It's not important; taxes are automatic</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 'B', true)">
+                                <input type="radio" name="q3" id="q3-b">
+                                <label for="q3-b">B) It helps you make smarter financial decisions and avoid surprises</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 'C', false)">
+                                <input type="radio" name="q3" id="q3-c">
+                                <label for="q3-c">C) Only accountants need to understand taxes</label>
+                            </div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 'D', false)">
+                                <input type="radio" name="q3" id="q3-d">
+                                <label for="q3-d">D) Taxes don't affect your budget or savings</label>
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-3"></div>
+                    </div>
+
+                    <div class="quiz-results" id="quiz-results" style="display: none;">
+                        <h3>Quiz Complete! 🎉</h3>
+                        <p class="quiz-score">You got <span id="quiz-score">0</span> out of 3 correct!</p>
+                        <p class="quiz-message" id="quiz-message"></p>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn-secondary prev-btn" onclick="goToSection(3)">Previous</button>
+                    <button class="btn-primary next-btn" id="quiz-next-btn" onclick="goToSection(5)" disabled>Next Section</button>
+                </div>
+            </section>
+
+            <!-- Section 5: Summary & Next Steps -->
+            <section class="lesson-section" id="section-5">
+                <div class="section-number">Section 5 of 5</div>
+                <h2 class="section-title">Lesson Summary</h2>
+
+                <div class="summary-card">
+                    <h3>🎯 What You Learned Today</h3>
+                    <ul class="summary-list">
+                        <li><strong>Taxes are mandatory payments</strong> to the government that fund public services</li>
+                        <li><strong>Your taxes pay for</strong> roads, schools, healthcare, safety, and infrastructure</li>
+                        <li><strong>Taxes reduce your take-home pay</strong> and affect your monthly budget</li>
+                        <li><strong>Understanding taxes</strong> helps you make better financial decisions</li>
+                        <li><strong>You file a tax return yearly</strong> which may result in a refund or bill</li>
+                    </ul>
+                </div>
+
+                <div class="next-lesson-preview">
+                    <h3>📚 Coming Up Next: Understanding Tax Brackets</h3>
+                    <p>In the next lesson, you'll learn how progressive tax systems work and why earning more doesn't mean losing more to taxes proportionally.</p>
+                    <div class="preview-topics">
+                        <span class="preview-tag">Tax Brackets</span>
+                        <span class="preview-tag">Marginal vs Effective Rates</span>
+                        <span class="preview-tag">Progressive Taxation</span>
+                    </div>
+                </div>
+
+                <div class="completion-actions">
+                    <button class="btn-secondary prev-btn" onclick="goToSection(4)">Previous</button>
+                    <button class="btn-primary complete-btn" onclick="completeLesson()">Complete Lesson</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        let currentSection = 1;
+        let quizScore = 0;
+        let quizAnswered = [false, false, false];
+        let currentQuizQuestion = 1;
+
+        // Update progress bar
+        function updateProgress() {
+            const progress = (currentSection / 5) * 100;
+            document.getElementById('lesson-progress-fill').style.width = progress + '%';
+            document.getElementById('current-section').textContent = currentSection;
+        }
+
+        // Navigate between sections
+        function goToSection(sectionNum) {
+            // Hide current section
+            document.getElementById(`section-${currentSection}`).classList.remove('active');
+
+            // Show new section
+            currentSection = sectionNum;
+            document.getElementById(`section-${currentSection}`).classList.add('active');
+
+            // Update progress
+            updateProgress();
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Quiz functionality
+        function selectAnswer(questionNum, answer, isCorrect) {
+            const feedback = document.getElementById(`feedback-${questionNum}`);
+            const option = event.currentTarget;
+
+            // Disable all options for this question
+            const allOptions = option.parentElement.querySelectorAll('.quiz-option');
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                opt.classList.add('disabled');
+            });
+
+            // Mark selected option
+            option.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+            if (isCorrect) {
+                if (!quizAnswered[questionNum - 1]) {
+                    quizScore++;
+                    quizAnswered[questionNum - 1] = true;
+                }
+                feedback.innerHTML = `
+                    <div class="feedback-correct">
+                        <span class="feedback-icon">✓</span>
+                        <span>Correct! Great job!</span>
+                    </div>
+                `;
+            } else {
+                quizAnswered[questionNum - 1] = true;
+                feedback.innerHTML = `
+                    <div class="feedback-incorrect">
+                        <span class="feedback-icon">✗</span>
+                        <span>Not quite. Review the material and try again!</span>
+                    </div>
+                `;
+            }
+
+            feedback.style.display = 'block';
+
+            // Show next question or results
+            setTimeout(() => {
+                if (questionNum < 3) {
+                    document.getElementById(`quiz-${questionNum}`).style.display = 'none';
+                    document.getElementById(`quiz-${questionNum + 1}`).style.display = 'block';
+                    currentQuizQuestion++;
+                } else {
+                    // Show results
+                    showQuizResults();
+                }
+            }, 1500);
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-3').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('quiz-score').textContent = quizScore;
+
+            const messageEl = document.getElementById('quiz-message');
+            if (quizScore === 3) {
+                messageEl.innerHTML = '🌟 Perfect score! You have an excellent understanding of the basics of taxation.';
+            } else if (quizScore === 2) {
+                messageEl.innerHTML = '👍 Good job! You understand most of the key concepts.';
+            } else {
+                messageEl.innerHTML = '📖 Keep learning! Review the material and you\'ll get it.';
+            }
+
+            // Enable next button
+            document.getElementById('quiz-next-btn').disabled = false;
+        }
+
+// Complete lesson
+async function completeLesson() {
+            const btn = document.querySelector('.complete-btn');
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+            
+            try {
+                // Calculate score percentage (out of 3 questions)
+                const scorePercentage = Math.round((quizScore / 3) * 100);
+                
+                console.log('Saving lesson completion:', {
+                    courseId: 'tax-fundamentals',
+                    lessonId: 1,
+                    score: scorePercentage,
+                    duration: 45
+                });
+                
+                // Save completion to backend - this will automatically unlock Lesson 2
+                const result = await api.completeLesson('tax-fundamentals', 1, scorePercentage, 45);
+                
+                console.log('Lesson completion result:', result);
+
+                // Notify user
+                alert('🎉 Congratulations! You\'ve completed Lesson 1 and unlocked Lesson 2!');
+
+                // Redirect back to course page
+                window.location.href = '../unit.html';
+            } catch (error) {
+                console.error('Error completing lesson:', error);
+                alert('Error saving progress: ' + error.message + '\n\nReturning to course page.');
+                // Still redirect even if save fails
+                window.location.href = '../unit.html';
+            }
+        }
+        if (!api.isAuthenticated()) {
+            window.location.href = '../../Public/Auth/signin.html';
+        }
+
+        // Load user profile
+        async function loadUserProfile() {
+            try {
+                const data = await api.getDashboardData();
+                document.getElementById('user-name').textContent = data.user.username;
+                document.getElementById('user-email').textContent = data.user.email;
+                document.getElementById('user-avatar').textContent = data.user.avatar || data.user.username.substring(0, 2).toUpperCase();
+            } catch (error) {
+                console.error('Failed to load user profile:', error);
+                if (error.message.includes('token') || error.message.includes('401') || error.message.includes('403')) {
+                    alert('Your session has expired. Please log in again.');
+                    window.location.href = '../../Public/Auth/signin.html';
+                }
+            }
+        }
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            if (confirm('Are you sure you want to logout?')) {
+                api.logout();
+            }
+        });
+
+
+        // Load courses on page load
+        loadUserCourses();
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>

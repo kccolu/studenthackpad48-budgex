@@ -1,3 +1,3 @@
-# studenthackpad48-budgex (it doesn't work btw, i dont even think it's connected properly)
+# studenthackpad48-budgex
 ## Student Hackpad 48 hours Hackathon: INCOMPLETE
  

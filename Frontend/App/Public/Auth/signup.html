@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Budgex</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo">Budgex</div>
+
+            <h2 class="form-title">Create Account</h2>
+            <p class="form-subtitle">Start your financial education today</p>
+
+            <button class="google-btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.8 10.2273C19.8 9.51819 19.7364 8.83637 19.6182 8.18182H10.2V12.05H15.5818C15.3273 13.3 14.6091 14.3591 13.5409 15.0682V17.5773H16.8182C18.6909 15.8364 19.8 13.2727 19.8 10.2273Z" fill="#4285F4"/>
+                    <path d="M10.2 20C12.9 20 15.1727 19.1045 16.8182 17.5773L13.5409 15.0682C12.6409 15.6682 11.5091 16.0227 10.2 16.0227C7.59545 16.0227 5.38182 14.2636 4.58636 11.9H1.20455V14.4909C2.84091 17.7591 6.24091 20 10.2 20Z" fill="#34A853"/>
+                    <path d="M4.58636 11.9C4.36364 11.3 4.23636 10.6591 4.23636 10C4.23636 9.34091 4.36364 8.7 4.58636 8.1V5.50909H1.20455C0.531818 6.85909 0.136364 8.38636 0.136364 10C0.136364 11.6136 0.531818 13.1409 1.20455 14.4909L4.58636 11.9Z" fill="#FBBC05"/>
+                    <path d="M10.2 3.97727C11.6227 3.97727 12.8864 4.48182 13.8682 5.42273L16.7636 2.52727C15.1682 0.95 12.8955 0 10.2 0C6.24091 0 2.84091 2.24091 1.20455 5.50909L4.58636 8.1C5.38182 5.73636 7.59545 3.97727 10.2 3.97727Z" fill="#EA4335"/>
+                </svg>
+                Continue with Google
+            </button>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Choose a username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required minlength="8">
+                    <small style="color: #666; font-size: 0.85em; display: block; margin-top: 0.25rem;">
+                        Minimum 8 characters, 1 uppercase, 1 lowercase
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+
+                <label class="checkbox-label terms-label">
+                    <input type="checkbox" id="terms" required>
+                    <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                </label>
+
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+
+            <p class="switch-form">
+                Already have an account?
+                <a href="signin.html">Sign in</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="../../Protected/Dashboard/api-client.js"></script>
+    <script>
+        // Form submission
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const terms = document.getElementById('terms').checked;
+
+            // Validation
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            if (!terms) {
+                alert('Please accept the Terms of Service and Privacy Policy');
+                return;
+            }
+
+            // Validate password strength
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long');
+                return;
+            }
+
+            if (!/[a-z]/.test(password)) {
+                alert('Password must contain at least one lowercase letter');
+                return;
+            }
+
+            if (!/[A-Z]/.test(password)) {
+                alert('Password must contain at least one uppercase letter');
+                return;
+            }
+
+            if (username.length < 3 || username.length > 30) {
+                alert('Username must be between 3 and 30 characters');
+                return;
+            }
+
+            try {
+                // Show loading state
+                const submitBtn = document.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Creating Account...';
+                submitBtn.disabled = true;
+
+                // Register user via API
+                const response = await api.register(username, email, password);
+
+                console.log('Registration successful:', response);
+                alert('Account created successfully!');
+
+                // Redirect to dashboard
+                window.location.href = '../../Protected/Dashboard/dashboard-interactive.html';
+            } catch (error) {
+                console.error('Registration error:', error);
+                alert('Registration failed: ' + error.message);
+
+                // Reset button
+                const submitBtn = document.querySelector('.submit-btn');
+                submitBtn.textContent = 'Create Account';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Google sign-up
+        document.querySelector('.google-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Google sign-up clicked');
+            alert('Google sign-up integration coming soon!');
+        });
+    </script>
+</body>
+</html>

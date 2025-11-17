@@ -1,1 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Tools - Budgex</title>
+    <link rel="stylesheet" href="tools.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">Budgex</div>
 
+        <nav class="sidebar-nav">
+            <a href="../Dashboard/dashboard-interactive.html" class="nav-item">
+                <span class="nav-icon icon-home"></span>
+                <span>Dashboard</span>
+            </a>
+            <a href="../MyCourse/mycourses.html" class="nav-item">
+                <span class="nav-icon icon-courses"></span>
+                <span>My Courses</span>
+            </a>
+            <a href="tools.html" class="nav-item active">
+                <span class="nav-icon icon-tools"></span>
+                <span>Tools</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar" id="user-avatar">JD</div>
+                <div class="user-info">
+                    <div class="user-name" id="user-name">John Doe</div>
+                    <div class="user-email" id="user-email">john@example.com</div>
+                </div>
+            </div>
+            <a href="../../Public/Home/index.html" class="nav-item" id="logout-btn">
+                <span class="nav-icon icon-logout"></span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="tools-header">
+                    <h1 class="page-title">Financial Tools</h1>
+                    <p class="page-subtitle">Calculate, plan, and optimize your finances</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tool Tabs -->
+        <div class="tool-tabs">
+            <button class="tool-tab active" data-tool="tax-calculator">
+                <span class="tab-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="4" width="20" height="24" fill="#fbbf24" stroke="#000" stroke-width="2" rx="3"/>
+                        <path d="M12 10 C12 10 13 8 16 8 C19 8 20 10 20 10 C20 11.5 19 13 16 13 C13 13 12 11.5 12 10 Z" fill="#f59e0b" stroke="#000" stroke-width="1.5"/>
+                        <path d="M12 18 C12 18 13 20 16 20 C19 20 20 18 20 18 C20 16.5 19 15 16 15 C13 15 12 16.5 12 18 Z" fill="#f59e0b" stroke="#000" stroke-width="1.5"/>
+                        <rect x="15.5" y="6" width="1" height="16" fill="#000"/>
+                    </svg>
+                </span>
+                <span>Tax Calculator</span>
+            </button>
+            <button class="tool-tab" data-tool="retirement-planner">
+                <span class="tab-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="13" y="22" width="6" height="6" fill="#f59e0b" stroke="#000" stroke-width="2"/>
+                        <ellipse cx="16" cy="14" rx="9" ry="6" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+                        <ellipse cx="16" cy="11" rx="6" ry="4.5" fill="#f59e0b" stroke="#000" stroke-width="1.5"/>
+                        <circle cx="12" cy="7" r="3" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <circle cx="20" cy="8" r="2.5" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                    </svg>
+                </span>
+                <span>Retirement Planner</span>
+            </button>
+            <button class="tool-tab" data-tool="investment-calculator">
+                <span class="tab-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 24 L4 22 L7 22 L7 24 Z" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <path d="M9 19 L9 22 L12 22 L12 19 Z" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <path d="M14 15 L14 22 L17 22 L17 15 Z" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <path d="M19 11 L19 22 L22 22 L22 11 Z" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <path d="M24 8 L24 22 L27 22 L27 8 Z" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <path d="M3 26 L29 26" stroke="#000" stroke-width="2" stroke-linecap="square"/>
+                        <path d="M7 20 L12 17 L17 13 L22 9 L27 6" stroke="#f59e0b" stroke-width="2" stroke-linecap="square"/>
+                    </svg>
+                </span>
+                <span>Investment Calculator</span>
+            </button>
+            <button class="tool-tab" data-tool="budget-planner">
+                <span class="tab-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="3" height="10" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <rect x="7" y="6" width="3" height="7" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <rect x="12" y="5" width="3" height="8" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <rect x="17" y="4" width="3" height="9" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <rect x="22" y="7" width="3" height="6" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <rect x="27" y="8" width="3" height="5" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                        <rect x="1" y="14" width="30" height="3" fill="#fbbf24" stroke="#000" stroke-width="1.5"/>
+                    </svg>
+                </span>
+                <span>Budget Planner</span>
+            </button>
+        </div>
+
+        <!-- Tool Content -->
+        <div class="tool-content">
+            <!-- Tax Calculator -->
+            <div class="tool-panel active" id="tax-calculator">
+                <div class="tool-intro">
+                    <h2 class="tool-title">Income Tax Calculator</h2>
+                    <p class="tool-description">Calculate your estimated income tax based on your annual income and deductions.</p>
+                </div>
+
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <div class="form-section">
+                            <h3 class="section-heading">Income Information</h3>
+
+                            <div class="form-group">
+                                <label for="filing-status">Filing Status</label>
+                                <select id="filing-status" class="form-control">
+                                    <option value="single">Single</option>
+                                    <option value="married-joint">Married Filing Jointly</option>
+                                    <option value="married-separate">Married Filing Separately</option>
+                                    <option value="head-of-household">Head of Household</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="annual-income">Annual Income</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="annual-income" class="form-control" placeholder="0" min="0" step="1000">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="standard-deduction">Deduction Type</label>
+                                <select id="standard-deduction" class="form-control">
+                                    <option value="standard">Standard Deduction</option>
+                                    <option value="itemized">Itemized Deduction</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="itemized-group" style="display: none;">
+                                <label for="itemized-amount">Itemized Deduction Amount</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="itemized-amount" class="form-control" placeholder="0" min="0" step="100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="section-heading">Additional Information</h3>
+
+                            <div class="form-group">
+                                <label for="dependents">Number of Dependents</label>
+                                <input type="number" id="dependents" class="form-control" placeholder="0" min="0" max="20">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="retirement-contribution">401(k) / IRA Contribution</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="retirement-contribution" class="form-control" placeholder="0" min="0" step="500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="calculate-btn" id="calculate-tax">Calculate Tax</button>
+                    </div>
+
+                    <div class="calculator-results">
+                        <div class="results-card">
+                            <div class="result-header">
+                                <h3>Tax Calculation Results</h3>
+                                <span class="result-badge">2024 Tax Year</span>
+                            </div>
+
+                            <div class="result-item highlight">
+                                <span class="result-label">Total Tax Owed</span>
+                                <span class="result-value" id="total-tax">$0</span>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="result-item">
+                                <span class="result-label">Gross Income</span>
+                                <span class="result-value" id="gross-income">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Taxable Income</span>
+                                <span class="result-value" id="taxable-income">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Effective Tax Rate</span>
+                                <span class="result-value" id="effective-rate">0%</span>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="result-item">
+                                <span class="result-label">After-Tax Income</span>
+                                <span class="result-value success" id="after-tax-income">$0</span>
+                            </div>
+
+                            <div class="result-breakdown">
+                                <h4>Tax Breakdown</h4>
+                                <div class="breakdown-bar">
+                                    <div class="breakdown-segment" style="width: 0%" data-label="Federal Tax"></div>
+                                </div>
+                                <div class="breakdown-details" id="breakdown-details">
+                                    <small>Enter your information to see detailed breakdown</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tax-tips">
+                            <h4>💡 Tax Tips</h4>
+                            <ul>
+                                <li>Consider maxing out your 401(k) contributions to reduce taxable income</li>
+                                <li>Keep track of charitable donations for itemized deductions</li>
+                                <li>Health Savings Account (HSA) contributions are tax-deductible</li>
+                                <li>Student loan interest may be deductible up to $2,500</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retirement Planner -->
+            <div class="tool-panel" id="retirement-planner">
+                <div class="tool-intro">
+                    <h2 class="tool-title">Retirement Planner</h2>
+                    <p class="tool-description">Plan your retirement savings and see if you're on track to meet your goals.</p>
+                </div>
+
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <div class="form-section">
+                            <h3 class="section-heading">Current Situation</h3>
+
+                            <div class="form-group">
+                                <label for="current-age">Current Age</label>
+                                <input type="number" id="current-age" class="form-control" placeholder="30" min="18" max="100" value="30">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="retirement-age">Retirement Age</label>
+                                <input type="number" id="retirement-age" class="form-control" placeholder="65" min="50" max="80" value="65">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="current-savings">Current Retirement Savings</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="current-savings" class="form-control" placeholder="50000" min="0" step="1000" value="50000">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="monthly-contribution">Monthly Contribution</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="monthly-contribution" class="form-control" placeholder="500" min="0" step="50" value="500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="section-heading">Retirement Goals</h3>
+
+                            <div class="form-group">
+                                <label for="annual-return">Expected Annual Return (%)</label>
+                                <input type="number" id="annual-return" class="form-control" placeholder="7" min="0" max="20" step="0.5" value="7">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="retirement-income">Desired Annual Retirement Income</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="retirement-income" class="form-control" placeholder="60000" min="0" step="5000" value="60000">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life-expectancy">Life Expectancy</label>
+                                <input type="number" id="life-expectancy" class="form-control" placeholder="90" min="60" max="120" value="90">
+                            </div>
+                        </div>
+
+                        <button class="calculate-btn" id="calculate-retirement">Calculate Retirement Plan</button>
+                    </div>
+
+                    <div class="calculator-results">
+                        <div class="results-card">
+                            <div class="result-header">
+                                <h3>Retirement Projections</h3>
+                                <span class="result-badge">Estimated</span>
+                            </div>
+
+                            <div class="result-item highlight">
+                                <span class="result-label">Total at Retirement</span>
+                                <span class="result-value" id="retirement-total">$0</span>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="result-item">
+                                <span class="result-label">Years to Retirement</span>
+                                <span class="result-value" id="years-to-retire">0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Total Contributions</span>
+                                <span class="result-value" id="total-contributions">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Investment Growth</span>
+                                <span class="result-value success" id="investment-growth">$0</span>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="result-item">
+                                <span class="result-label">Annual Income for <span id="retirement-years">0</span> years</span>
+                                <span class="result-value" id="projected-income">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Status</span>
+                                <span class="result-value" id="retirement-status">Not Calculated</span>
+                            </div>
+
+                            <div class="result-breakdown">
+                                <h4>💡 Recommendations</h4>
+                                <div class="breakdown-details" id="retirement-recommendations">
+                                    <small>Enter your information to see personalized recommendations</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Calculator -->
+            <div class="tool-panel" id="investment-calculator">
+                <div class="tool-intro">
+                    <h2 class="tool-title">Investment Calculator</h2>
+                    <p class="tool-description">Calculate potential investment returns and compound growth over time.</p>
+                </div>
+
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <div class="form-section">
+                            <h3 class="section-heading">Investment Details</h3>
+
+                            <div class="form-group">
+                                <label for="initial-investment">Initial Investment</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="initial-investment" class="form-control" placeholder="10000" min="0" step="1000" value="10000">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="monthly-investment">Monthly Contribution</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="monthly-investment" class="form-control" placeholder="200" min="0" step="50" value="200">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="investment-years">Investment Period (Years)</label>
+                                <input type="number" id="investment-years" class="form-control" placeholder="20" min="1" max="50" value="20">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rate-of-return">Expected Annual Return (%)</label>
+                                <input type="number" id="rate-of-return" class="form-control" placeholder="8" min="0" max="30" step="0.5" value="8">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="section-heading">Additional Factors</h3>
+
+                            <div class="form-group">
+                                <label for="inflation-rate">Inflation Rate (%)</label>
+                                <input type="number" id="inflation-rate" class="form-control" placeholder="2.5" min="0" max="10" step="0.1" value="2.5">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tax-rate">Capital Gains Tax Rate (%)</label>
+                                <input type="number" id="tax-rate" class="form-control" placeholder="15" min="0" max="40" step="1" value="15">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="compound-frequency">Compounding Frequency</label>
+                                <select id="compound-frequency" class="form-control">
+                                    <option value="1">Annually</option>
+                                    <option value="4">Quarterly</option>
+                                    <option value="12" selected>Monthly</option>
+                                    <option value="365">Daily</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="calculate-btn" id="calculate-investment">Calculate Returns</button>
+                    </div>
+
+                    <div class="calculator-results">
+                        <div class="results-card">
+                            <div class="result-header">
+                                <h3>Investment Projections</h3>
+                                <span class="result-badge">Estimated</span>
+                            </div>
+
+                            <div class="result-item highlight">
+                                <span class="result-label">Future Value</span>
+                                <span class="result-value" id="future-value">$0</span>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="result-item">
+                                <span class="result-label">Total Invested</span>
+                                <span class="result-value" id="total-invested">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Total Growth</span>
+                                <span class="result-value success" id="total-growth">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">After Tax Value</span>
+                                <span class="result-value" id="after-tax-value">$0</span>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="result-item">
+                                <span class="result-label">Inflation-Adjusted Value</span>
+                                <span class="result-value" id="real-value">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Return on Investment</span>
+                                <span class="result-value success" id="roi-percentage">0%</span>
+                            </div>
+
+                            <div class="result-breakdown">
+                                <h4>📊 Growth Breakdown</h4>
+                                <div class="breakdown-details" id="investment-breakdown">
+                                    <small>Enter your information to see detailed breakdown</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.getElementById('calculate-retirement').addEventListener('click', () => {
+                    // Grab input values from the user
+                    const currentAge = parseInt(document.getElementById('current-age').value);
+                    const retirementAge = parseInt(document.getElementById('retirement-age').value);
+                    const currentSavings = parseFloat(document.getElementById('current-savings').value);
+                    const monthlyContribution = parseFloat(document.getElementById('monthly-contribution').value);
+                    const annualReturn = parseFloat(document.getElementById('annual-return').value) / 100;
+                    const retirementIncome = parseFloat(document.getElementById('retirement-income').value);
+                    const lifeExpectancy = parseInt(document.getElementById('life-expectancy').value);
+                
+                    // Basic validation
+                    if (!currentAge || !retirementAge || !currentSavings || !monthlyContribution || !annualReturn || !retirementIncome || !lifeExpectancy) {
+                        alert("Please fill in all fields with valid numbers.");
+                        return;
+                    }
+                    if (retirementAge <= currentAge) {
+                        alert("Retirement age must be greater than current age.");
+                        return;
+                    }
+                    if (lifeExpectancy <= retirementAge) {
+                        alert("Life expectancy must be greater than retirement age.");
+                        return;
+                    }
+                
+                    const yearsToRetirement = retirementAge - currentAge;
+                    const retirementYears = lifeExpectancy - retirementAge;
+                
+                    // Total contributions without interest
+                    const totalContributions = currentSavings + monthlyContribution * 12 * yearsToRetirement;
+                
+                    // Compound interest calculation for monthly contributions
+                    const P = currentSavings;
+                    const PMT = monthlyContribution;
+                    const r = annualReturn / 12; // monthly rate
+                    const n = yearsToRetirement * 12; // total months
+                
+                    const futureValue = P * Math.pow(1 + r, n) + PMT * ((Math.pow(1 + r, n) - 1) / r);
+                
+                    // Determine status
+                    const status = futureValue / retirementYears >= retirementIncome ? "✅ On Track" : "⚠️ Needs Adjustment";
+                
+                    // Update DOM
+                    document.getElementById('retirement-total').textContent = `$${futureValue.toFixed(2)}`;
+                    document.getElementById('years-to-retire').textContent = yearsToRetirement;
+                    document.getElementById('total-contributions').textContent = `$${totalContributions.toFixed(2)}`;
+                    document.getElementById('investment-growth').textContent = `$${(futureValue - totalContributions).toFixed(2)}`;
+                    document.getElementById('retirement-years').textContent = retirementYears;
+                    document.getElementById('projected-income').textContent = `$${retirementIncome.toFixed(2)}`;
+                    document.getElementById('retirement-status').textContent = status;
+                
+                    // Recommendations
+                    const recContainer = document.getElementById('retirement-recommendations');
+                    recContainer.innerHTML = "";
+                    if (status === "✅ On Track") {
+                        recContainer.innerHTML = "<small>You're on track! Keep following your current plan and review annually.</small>";
+                    } else {
+                        const shortfall = retirementIncome - futureValue / retirementYears;
+                        recContainer.innerHTML = `<small>You may fall short by ~$${shortfall.toFixed(2)} per year. Consider increasing your monthly contributions or adjusting retirement goals.</small>`;
+                    }
+                });
+                </script>
+
+            <!-- Budget Planner -->
+            <div class="tool-panel" id="budget-planner">
+                <div class="tool-intro">
+                    <h2 class="tool-title">Budget Planner</h2>
+                    <p class="tool-description">Create and track your monthly budget to achieve your financial goals.</p>
+                </div>
+
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <div class="form-section">
+                            <h3 class="section-heading">Monthly Income</h3>
+
+                            <div class="form-group">
+                                <label for="salary">Salary (After Tax)</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="salary" class="form-control" placeholder="4000" min="0" step="100" value="4000">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="other-income">Other Income</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="other-income" class="form-control" placeholder="0" min="0" step="50" value="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="section-heading">Fixed Expenses</h3>
+
+                            <div class="form-group">
+                                <label for="housing">Housing (Rent/Mortgage)</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="housing" class="form-control" placeholder="1200" min="0" step="50" value="1200">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="utilities">Utilities</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="utilities" class="form-control" placeholder="150" min="0" step="10" value="150">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="transportation">Transportation</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="transportation" class="form-control" placeholder="300" min="0" step="50" value="300">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="insurance">Insurance</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="insurance" class="form-control" placeholder="200" min="0" step="25" value="200">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="section-heading">Variable Expenses</h3>
+
+                            <div class="form-group">
+                                <label for="groceries">Groceries</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="groceries" class="form-control" placeholder="400" min="0" step="25" value="400">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dining">Dining Out</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="dining" class="form-control" placeholder="200" min="0" step="25" value="200">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="entertainment">Entertainment</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="entertainment" class="form-control" placeholder="100" min="0" step="25" value="100">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="other-expenses">Other Expenses</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">$</span>
+                                    <input type="number" id="other-expenses" class="form-control" placeholder="150" min="0" step="25" value="150">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="section-heading">Savings Goals</h3>
+
+                            <div class="form-group">
+                                <label for="savings-goal">Monthly Savings Goal (%)</label>
+                                <input type="number" id="savings-goal" class="form-control" placeholder="20" min="0" max="100" step="5" value="20">
+                            </div>
+                        </div>
+
+                        <button class="calculate-btn" id="calculate-budget">Analyze Budget</button>
+                    </div>
+
+                    <div class="calculator-results">
+                        <div class="results-card">
+                            <div class="result-header">
+                                <h3>Budget Summary</h3>
+                                <span class="result-badge">Monthly</span>
+                            </div>
+
+                            <div class="result-item highlight">
+                                <span class="result-label">Total Income</span>
+                                <span class="result-value success" id="total-income">$0</span>
+                            </div>
+
+                            <div class="result-item highlight">
+                                <span class="result-label">Total Expenses</span>
+                                <span class="result-value" id="total-expenses">$0</span>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="result-item">
+                                <span class="result-label">Available to Save</span>
+                                <span class="result-value" id="available-savings">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Savings Goal</span>
+                                <span class="result-value" id="savings-target">$0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Budget Status</span>
+                                <span class="result-value" id="budget-status">Not Calculated</span>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="result-item">
+                                <span class="result-label">Expense Ratio</span>
+                                <span class="result-value" id="expense-ratio">0%</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Savings Rate</span>
+                                <span class="result-value success" id="savings-rate">0%</span>
+                            </div>
+
+                            <div class="result-breakdown">
+                                <h4>📊 Expense Breakdown</h4>
+                                <div class="breakdown-details" id="expense-breakdown">
+                                    <small>Enter your expenses to see detailed breakdown</small>
+                                </div>
+                            </div>
+
+                            <div class="result-breakdown">
+                                <h4>💡 Budget Tips</h4>
+                                <div class="breakdown-details" id="budget-tips">
+                                    <small>Enter your information to see personalized budget tips</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../Dashboard/api-client.js"></script>
+    <script>
+        // Check authentication on page load
+        if (!api.isAuthenticated()) {
+            window.location.href = '../../Public/Auth/signin.html';
+        }
+
+        // Load user profile
+        async function loadUserProfile() {
+            try {
+                const data = await api.getDashboardData();
+                document.getElementById('user-name').textContent = data.user.username;
+                document.getElementById('user-email').textContent = data.user.email;
+                document.getElementById('user-avatar').textContent = data.user.avatar || data.user.username.substring(0, 2).toUpperCase();
+            } catch (error) {
+                console.error('Failed to load user profile:', error);
+                if (error.message.includes('token') || error.message.includes('401') || error.message.includes('403')) {
+                    alert('Your session has expired. Please log in again.');
+                    window.location.href = '../../Public/Auth/signin.html';
+                }
+            }
+        }
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            if (confirm('Are you sure you want to logout?')) {
+                api.logout();
+            }
+        });
+
+        // Tab switching
+        const toolTabs = document.querySelectorAll('.tool-tab');
+        const toolPanels = document.querySelectorAll('.tool-panel');
+
+        toolTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const toolId = tab.dataset.tool;
+
+                // Update active tab
+                toolTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Update active panel
+                toolPanels.forEach(panel => {
+                    panel.classList.remove('active');
+                    if (panel.id === toolId) {
+                        panel.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Tax Calculator Logic
+        const calculateBtn = document.getElementById('calculate-tax');
+        const standardDeductionSelect = document.getElementById('standard-deduction');
+        const itemizedGroup = document.getElementById('itemized-group');
+
+        // Toggle itemized deduction input
+        standardDeductionSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'itemized') {
+                itemizedGroup.style.display = 'block';
+            } else {
+                itemizedGroup.style.display = 'none';
+            }
+        });
+
+        // 2024 Standard Deductions
+        const standardDeductions = {
+            'single': 15750,
+            'married-joint': 31500,
+            'married-separate': 15750,
+            'head-of-household': 23625
+        };
+
+        // 2024 Tax Brackets (Single)
+        const taxBrackets = {
+            'single': [
+                { rate: 0.10, max: 11925 },
+                { rate: 0.12, max: 48475 },
+                { rate: 0.22, max: 103350 },
+                { rate: 0.24, max: 197300 },
+                { rate: 0.32, max: 250525 },
+                { rate: 0.35, max: 626350 },
+                { rate: 0.37, max: Infinity }
+            ],
+            'married-joint': [
+                { rate: 0.10, max: 23850 },
+                { rate: 0.12, max: 96950 },
+                { rate: 0.22, max: 206700 },
+                { rate: 0.24, max: 394600 },
+                { rate: 0.32, max: 501050 },
+                { rate: 0.35, max: 751600 },
+                { rate: 0.37, max: Infinity }
+            ],
+            'married-separate': [
+                { rate: 0.10, max: 11925 },
+                { rate: 0.12, max: 48475 },
+                { rate: 0.22, max: 103350 },
+                { rate: 0.24, max: 197300 },
+                { rate: 0.32, max: 250525 },
+                { rate: 0.35, max: 375800 },
+                { rate: 0.37, max: Infinity }
+            ],
+            'head-of-household': [
+                { rate: 0.10, max: 17000 },
+                { rate: 0.12, max: 64850 },
+                { rate: 0.22, max: 103350 },
+                { rate: 0.24, max: 197300 },
+                { rate: 0.32, max: 250500 },
+                { rate: 0.35, max: 626350 },
+                { rate: 0.37, max: Infinity }
+            ]
+        };
+
+        calculateBtn.addEventListener('click', () => {
+            // Get input values
+            const filingStatus = document.getElementById('filing-status').value;
+            const annualIncome = parseFloat(document.getElementById('annual-income').value) || 0;
+            const deductionType = document.getElementById('standard-deduction').value;
+            const itemizedAmount = parseFloat(document.getElementById('itemized-amount').value) || 0;
+            const dependents = parseInt(document.getElementById('dependents').value) || 0;
+            const retirementContribution = parseFloat(document.getElementById('retirement-contribution').value) || 0;
+
+            // Calculate deduction
+            let deduction = deductionType === 'standard'
+                ? standardDeductions[filingStatus]
+                : itemizedAmount;
+
+            // Adjust for retirement contribution (pre-tax)
+            const adjustedGrossIncome = annualIncome - retirementContribution;
+
+            // Calculate taxable income
+            const taxableIncome = Math.max(0, adjustedGrossIncome - deduction);
+
+            // Calculate tax using brackets
+            let totalTax = 0;
+            let remainingIncome = taxableIncome;
+            let previousMax = 0;
+            const brackets = taxBrackets[filingStatus];
+
+            for (let bracket of brackets) {
+                const bracketIncome = Math.min(remainingIncome, bracket.max - previousMax);
+                if (bracketIncome > 0) {
+                    totalTax += bracketIncome * bracket.rate;
+                    remainingIncome -= bracketIncome;
+                    previousMax = bracket.max;
+                } else {
+                    break;
+                }
+            }
+
+            // Calculate results
+            const effectiveRate = annualIncome > 0 ? (totalTax / annualIncome * 100) : 0;
+            const afterTaxIncome = annualIncome - totalTax;
+
+            // Update UI
+            document.getElementById('total-tax').textContent = `$${totalTax.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('gross-income').textContent = `$${annualIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('taxable-income').textContent = `$${taxableIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('effective-rate').textContent = `${effectiveRate.toFixed(2)}%`;
+            document.getElementById('after-tax-income').textContent = `$${afterTaxIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+
+            // Update breakdown
+            const breakdownBar = document.querySelector('.breakdown-segment');
+            const taxPercentage = annualIncome > 0 ? (totalTax / annualIncome * 100) : 0;
+            breakdownBar.style.width = `${taxPercentage}%`;
+
+            document.getElementById('breakdown-details').innerHTML = `
+                <small>
+                    <strong>Deductions:</strong> $${deduction.toLocaleString()}<br>
+                    <strong>Retirement Contribution:</strong> $${retirementContribution.toLocaleString()}<br>
+                    <strong>Dependents:</strong> ${dependents}
+                </small>
+            `;
+        });
+
+        // Retirement Planner Logic
+        document.getElementById('calculate-retirement').addEventListener('click', () => {
+            // Get input values
+            const currentAge = parseInt(document.getElementById('current-age').value) || 0;
+            const retirementAge = parseInt(document.getElementById('retirement-age').value) || 65;
+            const currentSavings = parseFloat(document.getElementById('current-savings').value) || 0;
+            const monthlyContribution = parseFloat(document.getElementById('monthly-contribution').value) || 0;
+            const expectedReturn = parseFloat(document.getElementById('expected-return').value) || 7;
+
+            // Validation
+            if (currentAge >= retirementAge) {
+                alert('Retirement age must be greater than current age');
+                return;
+            }
+
+            // Calculate years to retirement
+            const yearsToRetire = retirementAge - currentAge;
+            const retirementYears = 30; // Assume 30 years in retirement
+
+            // Convert annual rate to monthly
+            const monthlyRate = expectedReturn / 100 / 12;
+            const totalMonths = yearsToRetire * 12;
+
+            // Calculate future value of current savings
+            const futureValueOfSavings = currentSavings * Math.pow(1 + monthlyRate, totalMonths);
+
+            // Calculate future value of monthly contributions (future value of annuity)
+            let futureValueOfContributions = 0;
+            if (monthlyRate > 0) {
+                futureValueOfContributions = monthlyContribution *
+                    ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate);
+            } else {
+                futureValueOfContributions = monthlyContribution * totalMonths;
+            }
+
+            // Total retirement savings
+            const totalRetirement = futureValueOfSavings + futureValueOfContributions;
+
+            // Calculate total contributed
+            const totalContributed = currentSavings + (monthlyContribution * totalMonths);
+
+            // Calculate growth
+            const totalGrowth = totalRetirement - totalContributed;
+
+            // Annual income at retirement (assuming 4% withdrawal rate)
+            const annualIncome = totalRetirement * 0.04;
+
+            // Determine status
+            const recommendedSavings = 10 * annualIncome; // Common rule: 10x annual income
+            let status = 'On Track';
+            if (totalRetirement < recommendedSavings * 0.7) {
+                status = 'Below Target';
+            } else if (totalRetirement > recommendedSavings * 1.3) {
+                status = 'Excellent';
+            }
+
+            // Generate recommendations
+            let recommendations = '<ul style="list-style: none; padding: 0; margin: 0;">';
+            if (monthlyContribution < 500) {
+                recommendations += '<li style="padding: 0.5rem 0;">→ Consider increasing monthly contributions</li>';
+            }
+            if (totalRetirement < 1000000) {
+                recommendations += '<li style="padding: 0.5rem 0;">→ Aim for at least $1M for comfortable retirement</li>';
+            }
+            recommendations += `<li style="padding: 0.5rem 0;">→ Review portfolio annually and rebalance</li>`;
+            recommendations += `<li style="padding: 0.5rem 0;">→ Consider catch-up contributions after age 50</li>`;
+            recommendations += '</ul>';
+
+            // Update UI
+            document.getElementById('retirement-total').textContent =
+                `$${totalRetirement.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('years-to-retire').textContent = yearsToRetire;
+            document.getElementById('total-contributions').textContent =
+                `$${totalContributed.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('investment-growth').textContent =
+                `$${totalGrowth.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('retirement-years').textContent = retirementYears;
+            document.getElementById('projected-income').textContent =
+                `$${annualIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('retirement-status').textContent = status;
+            document.getElementById('retirement-recommendations').innerHTML = recommendations;
+        });
+
+        // Investment Calculator Logic
+        document.getElementById('calculate-investment').addEventListener('click', () => {
+            // Get input values
+            const initialInvestment = parseFloat(document.getElementById('initial-investment').value) || 0;
+            const monthlyInvestment = parseFloat(document.getElementById('monthly-investment').value) || 0;
+            const investmentYears = parseInt(document.getElementById('investment-years').value) || 0;
+            const rateOfReturn = parseFloat(document.getElementById('rate-of-return').value) || 7;
+            const inflationRate = parseFloat(document.getElementById('inflation-rate').value) || 2.5;
+            const taxRate = parseFloat(document.getElementById('tax-rate').value) || 15;
+
+            if (investmentYears === 0) {
+                alert('Please enter a valid investment period');
+                return;
+            }
+
+            // Convert annual rate to monthly
+            const monthlyRate = rateOfReturn / 100 / 12;
+            const totalMonths = investmentYears * 12;
+
+            // Calculate future value of initial investment
+            const futureValueInitial = initialInvestment * Math.pow(1 + monthlyRate, totalMonths);
+
+            // Calculate future value of monthly contributions
+            let futureValueMonthly = 0;
+            if (monthlyRate > 0) {
+                futureValueMonthly = monthlyInvestment *
+                    ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate);
+            } else {
+                futureValueMonthly = monthlyInvestment * totalMonths;
+            }
+
+            // Total future value
+            const totalFutureValue = futureValueInitial + futureValueMonthly;
+
+            // Total invested
+            const totalInvested = initialInvestment + (monthlyInvestment * totalMonths);
+
+            // Total growth (gains)
+            const totalGrowth = totalFutureValue - totalInvested;
+
+            // Calculate taxes on gains
+            const taxOnGains = totalGrowth * (taxRate / 100);
+            const afterTaxValue = totalFutureValue - taxOnGains;
+
+            // Calculate inflation-adjusted value (real value)
+            const inflationMultiplier = Math.pow(1 + inflationRate / 100, investmentYears);
+            const realValue = afterTaxValue / inflationMultiplier;
+
+            // ROI percentage
+            const roiPercentage = totalInvested > 0 ? (totalGrowth / totalInvested * 100) : 0;
+
+            // Generate breakdown
+            let breakdown = '<ul style="list-style: none; padding: 0; margin: 0;">';
+            breakdown += `<li style="padding: 0.5rem 0;"><strong>Initial Investment:</strong> $${initialInvestment.toLocaleString('en-US', { maximumFractionDigits: 0 })}</li>`;
+            breakdown += `<li style="padding: 0.5rem 0;"><strong>Total Contributions:</strong> $${(monthlyInvestment * totalMonths).toLocaleString('en-US', { maximumFractionDigits: 0 })}</li>`;
+            breakdown += `<li style="padding: 0.5rem 0;"><strong>Investment Gains:</strong> $${totalGrowth.toLocaleString('en-US', { maximumFractionDigits: 0 })}</li>`;
+            breakdown += `<li style="padding: 0.5rem 0;"><strong>Capital Gains Tax (${taxRate}%):</strong> -$${taxOnGains.toLocaleString('en-US', { maximumFractionDigits: 0 })}</li>`;
+            breakdown += `<li style="padding: 0.5rem 0;"><strong>Inflation Impact:</strong> ${inflationRate}% annually</li>`;
+            breakdown += '</ul>';
+
+            // Update UI
+            document.getElementById('future-value').textContent =
+                `$${totalFutureValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('total-invested').textContent =
+                `$${totalInvested.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('total-growth').textContent =
+                `$${totalGrowth.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('after-tax-value').textContent =
+                `$${afterTaxValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('real-value').textContent =
+                `$${realValue.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('roi-percentage').textContent =
+                `${roiPercentage.toFixed(1)}%`;
+            document.getElementById('investment-breakdown').innerHTML = breakdown;
+        });
+
+        // Budget Planner Logic
+        document.getElementById('calculate-budget').addEventListener('click', () => {
+            // Get income
+            const monthlyIncome = parseFloat(document.getElementById('monthly-income').value) || 0;
+
+            // Get all expenses
+            const housing = parseFloat(document.getElementById('housing').value) || 0;
+            const transportation = parseFloat(document.getElementById('transportation').value) || 0;
+            const food = parseFloat(document.getElementById('food').value) || 0;
+            const utilities = parseFloat(document.getElementById('utilities').value) || 0;
+            const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+            const healthcare = parseFloat(document.getElementById('healthcare').value) || 0;
+            const entertainment = parseFloat(document.getElementById('entertainment').value) || 0;
+            const otherExpenses = parseFloat(document.getElementById('other-expenses').value) || 0;
+
+            // Get savings goal
+            const savingsGoal = parseFloat(document.getElementById('savings-goal').value) || 0;
+
+            // Calculate totals
+            const totalExpenses = housing + transportation + food + utilities +
+                                 insurance + healthcare + entertainment + otherExpenses;
+            const availableSavings = monthlyIncome - totalExpenses;
+            const actualSavings = Math.max(0, availableSavings);
+
+            // Calculate expense ratio and savings rate
+            const expenseRatio = monthlyIncome > 0 ? (totalExpenses / monthlyIncome * 100) : 0;
+            const savingsRate = monthlyIncome > 0 ? (actualSavings / monthlyIncome * 100) : 0;
+
+            // Determine budget status
+            let budgetStatus = '';
+            let statusClass = '';
+            if (availableSavings >= savingsGoal && savingsGoal > 0) {
+                budgetStatus = 'On Track ✓';
+                statusClass = 'status-positive';
+            } else if (availableSavings >= 0 && availableSavings < savingsGoal) {
+                budgetStatus = 'Under Goal';
+                statusClass = 'status-warning';
+            } else if (availableSavings < 0) {
+                budgetStatus = 'Over Budget ⚠';
+                statusClass = 'status-negative';
+            } else {
+                budgetStatus = 'Balanced';
+                statusClass = 'status-positive';
+            }
+
+            // Calculate percentages for breakdown
+            const expenseCategories = [
+                { name: 'Housing', amount: housing, percentage: (housing / totalExpenses * 100) || 0, ideal: 30 },
+                { name: 'Transportation', amount: transportation, percentage: (transportation / totalExpenses * 100) || 0, ideal: 15 },
+                { name: 'Food', amount: food, percentage: (food / totalExpenses * 100) || 0, ideal: 12 },
+                { name: 'Utilities', amount: utilities, percentage: (utilities / totalExpenses * 100) || 0, ideal: 8 },
+                { name: 'Insurance', amount: insurance, percentage: (insurance / totalExpenses * 100) || 0, ideal: 10 },
+                { name: 'Healthcare', amount: healthcare, percentage: (healthcare / totalExpenses * 100) || 0, ideal: 8 },
+                { name: 'Entertainment', amount: entertainment, percentage: (entertainment / totalExpenses * 100) || 0, ideal: 5 },
+                { name: 'Other', amount: otherExpenses, percentage: (otherExpenses / totalExpenses * 100) || 0, ideal: 12 }
+            ];
+
+            // Generate budget tips
+            let tips = '<ul style="list-style: none; padding: 0; margin: 0;">';
+            if (savingsRate < 20) {
+                tips += '<li style="padding: 0.5rem 0;">→ Try to save at least 20% of your income</li>';
+            }
+            if (housing / monthlyIncome > 0.3) {
+                tips += '<li style="padding: 0.5rem 0;">→ Housing should be under 30% of income</li>';
+            }
+            if (availableSavings < 0) {
+                tips += '<li style="padding: 0.5rem 0;">→ Your expenses exceed income - review discretionary spending</li>';
+            }
+            if (tips === '<ul style="list-style: none; padding: 0; margin: 0;">') {
+                tips += '<li style="padding: 0.5rem 0;">✓ Your budget looks healthy!</li>';
+                tips += '<li style="padding: 0.5rem 0;">→ Consider increasing savings for emergencies</li>';
+            }
+            tips += '<li style="padding: 0.5rem 0;">→ Review your budget monthly and adjust as needed</li>';
+            tips += '</ul>';
+
+            // Update UI
+            document.getElementById('total-income').textContent =
+                `$${monthlyIncome.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('total-expenses').textContent =
+                `$${totalExpenses.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('available-savings').textContent =
+                `$${actualSavings.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('savings-target').textContent =
+                `$${savingsGoal.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+            document.getElementById('expense-ratio').textContent =
+                `${expenseRatio.toFixed(1)}%`;
+            document.getElementById('savings-rate').textContent =
+                `${savingsRate.toFixed(1)}%`;
+
+            const budgetStatusElement = document.getElementById('budget-status');
+            budgetStatusElement.textContent = budgetStatus;
+            budgetStatusElement.className = statusClass;
+
+            // Update expense breakdown with visual bars
+            const breakdownHTML = expenseCategories
+                .filter(cat => cat.amount > 0)
+                .map(cat => {
+                    const incomePercentage = (cat.amount / monthlyIncome * 100).toFixed(1);
+                    return `
+                    <div style="margin-bottom: 12px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                            <span style="font-weight: 500;">${cat.name}</span>
+                            <span style="color: #c0c0c0;">$${cat.amount.toLocaleString('en-US', { maximumFractionDigits: 0 })} (${incomePercentage}% of income)</span>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); height: 10px; border-radius: 5px; overflow: hidden;">
+                            <div style="background: linear-gradient(135deg, #2d5016, #4a8c2a); height: 100%; width: ${Math.min(100, cat.amount / monthlyIncome * 100)}%; transition: width 0.3s ease;"></div>
+                        </div>
+                    </div>
+                `;
+                }).join('');
+
+            document.getElementById('expense-breakdown').innerHTML = breakdownHTML || '<p style="color: #999;">No expenses entered</p>';
+            document.getElementById('budget-tips').innerHTML = tips;
+        });
+
+        // Sidebar navigation
+const navItems = document.querySelectorAll('.nav-item');
+
+navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+
+        // Only block navigation for "#" links
+        if (item.getAttribute("href") === "#") {
+            e.preventDefault();
+        }
+
+        // Update active state
+        navItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    // Load user profile
+    loadUserProfile();
+
+    const navItems = document.querySelectorAll('.nav-item');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    navItems.forEach(item => {
+        const link = item.getAttribute('href');
+
+        // Remove any active classes first
+        item.classList.remove('active');
+
+        // If the file name matches, mark it active
+        if (link === currentPage) {
+            item.classList.add('active');
+        }
+    });
+});
+    </script>
+</body>
+</html>
